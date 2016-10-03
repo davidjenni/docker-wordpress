@@ -1,0 +1,18 @@
+version: '2'
+services:
+  nginx:
+    build:
+      context: ./nginx/
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8080:80"
+    links:
+      - php-fpm
+  php-fpm:
+    build:
+      context: ./php-fpm/
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "9000:9000"
