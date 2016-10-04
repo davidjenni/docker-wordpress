@@ -4,15 +4,18 @@ services:
     build:
       context: ./nginx/
     volumes:
-      - .:/var/www/html
+      - wwwdata:/var/www/html
     ports:
       - "8080:80"
-    links:
+    depends_on:
       - php-fpm
   php-fpm:
     build:
       context: ./php-fpm/
     volumes:
-      - .:/var/www/html
+      - wwwdata:/var/www/html
     ports:
       - "9000:9000"
+volumes:
+  wwwdata:
+
