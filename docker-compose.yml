@@ -16,6 +16,13 @@ services:
       - wwwdata:/var/www/html
     ports:
       - "9000:9000"
+  phptest:
+    build:
+      context: ./phptest/
+    volumes:
+      - wwwdata:/var/www/html
+    depends_on:
+      - phpfpm
 volumes:
   wwwdata:
 
