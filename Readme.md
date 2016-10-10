@@ -28,8 +28,8 @@ $ docker-machine env do-sfo1-docker1
 - Connect to your VM or directly execute commands:
 
 ```bash
-$ docker-machine shh do-sfo1-docker1 docker -v
-$ docker-machine shh do-sfo1-docker1
+$ docker-machine ssh do-sfo1-docker1 docker -v
+$ docker-machine ssh do-sfo1-docker1
 ```
 
 ## Build containers and deploy
